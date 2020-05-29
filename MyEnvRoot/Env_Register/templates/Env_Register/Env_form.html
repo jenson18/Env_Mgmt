@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Env_Form</title>
+</head>
+<body>
+{% extends "Env_register/base.html" %}
+{% load crispy_forms_tags %}
+
+    {% block content %}
+
+    <form action="", method="post", autocomplete="off">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-2">
+                 {{ form.Release|as_crispy_field }}
+            </div>
+            <div class="col-md-2">
+                 {{ form.VAPP|as_crispy_field }}
+            </div>
+        </div>
+
+         <div class="row">
+
+            <div class="col-md-3">
+                {{ form.BSS_Non_CPQ|as_crispy_field }}
+            </div>
+            <div class="col-md-3">
+                {{ form.CPQ_OSS_SIO|as_crispy_field }}
+            </div>
+
+             <div class="col-md-3">
+                 {{ form.ARM|as_crispy_field }}
+            </div>
+
+            <div class="col-md-9">
+                {{ form.DB_SERVERS|as_crispy_field }}
+                           </div>
+
+             <div class="col-md-11">
+                 {{ form.COMMENTS|as_crispy_field }}
+             </div>
+        </div>
+    <div class="row">
+       <div class="col-md-7">
+                <button type="submit" class="btn btn-success btn-block btn-lg">Submit</button>
+             </div>
+         <div class="col-md-4">
+             <a href="{% url 'Env_list'%}" class="btn btn-secondary btn-block btn-lg" >Back To Env List</a>
+
+             </div>
+    </div>
+
+    </form>
+    {% endblock content %}
+
+</body>
+</html>

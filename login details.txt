@@ -1,0 +1,8 @@
+path('/login/', include('login_test.urls'), name='login'),
+    path('/logout/', include('login_test.urls'), name='logout'),
+
+GuestUser - login
+Amdocs@123
+
+jensonb
+jensonb - env admin
